@@ -1,0 +1,17 @@
+protocol %sInteractive {}
+
+final class %s {
+    // MARK: - Public State
+    
+    // MARK: - Private State
+    
+    // MARK: - UI
+    
+    // MARK: - Initializers
+    init() {}
+    
+    // MARK: - API
+}
+
+// MARK: - Detail
+extension %s: %sInteractive {}

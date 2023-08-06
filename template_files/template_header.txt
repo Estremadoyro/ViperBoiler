@@ -1,0 +1,7 @@
+//
+//  %s.swift
+//  %s
+//
+//  Created by %s on %s using ViperBoiler
+//
+

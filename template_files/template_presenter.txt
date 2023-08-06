@@ -1,0 +1,35 @@
+import class UIKit.UINavigationController
+
+protocol %sPresentable: AnyObject {
+    var view: %sScreen? { get set }
+    func start() -> %sScreen
+    func getBaseNavigation() -> UINavigationController?
+}
+
+final class %s {
+    // MARK: - Public State
+    weak var view: %sScreen?
+    
+    // MARK: - Private State
+    private let interactor: %sInteractive
+    private let router: %sRoutable
+    
+    // MARK: - Initializers
+    init(interactor: %sInteractive, router: %sRoutable) {
+        self.interactor = interactor
+        self.router = router
+    }
+    
+    // MARK: - API
+}
+
+// MARK: - Presentable
+extension %s: %sPresentable {
+    func start() -> %sScreen {
+        return router.start(presenter: self)
+    }
+    
+    func getBaseNavigation() -> UINavigationController? {
+        return view?.navigationController
+    }
+}

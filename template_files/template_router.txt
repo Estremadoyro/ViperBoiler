@@ -1,0 +1,23 @@
+protocol %sRoutable {
+    func start(presenter: %sPresentable) -> %sScreen
+}
+
+final class %s {
+    // MARK: - Public State
+    
+    // MARK: - Private State
+    
+    // MARK: - UI
+    
+    // MARK: - Initializers
+    init() {}
+    
+    // MARK: - API
+}
+
+// MARK: - Detail
+extension %s: %sRoutable {
+    func start(presenter: %sPresentable) -> %sScreen {
+        return %sScreen(presenter: presenter)
+    }
+}

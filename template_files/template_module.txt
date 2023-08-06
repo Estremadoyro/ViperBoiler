@@ -1,0 +1,26 @@
+final class %s {
+    // MARK: - Public State
+    
+    // MARK: - Private State
+    private let presenter: %sPresentable
+    
+    // MARK: - UI
+    
+    // MARK: - Initializers
+    init() {
+        let router = %sRouter()
+        let interactor = %sInteractor()
+        presenter = %sPresenter(interactor: interactor, router: router)
+    }
+   
+    // MARK: - API
+    func start() -> %sScreen {
+        let controller = presenter.start()
+        presenter.view = controller
+        
+        return controller
+    }
+}
+
+// MARK: - Detail
+private extension %s {}
