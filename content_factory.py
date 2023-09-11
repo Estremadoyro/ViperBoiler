@@ -23,9 +23,7 @@ class ContentFactory():
 
         file_type_lower = file_type.lower()
 
-        if file_type_lower == "header":
-            content += configuration_header.configure(file_type, template_path, module_name, self.project_name)
-        elif file_type_lower == "screen":
+        if file_type_lower == "screen":
             content += configuration_screen.configure(file_type, template_path, module_name)
         elif file_type_lower == "interactor":
             content += configuration_interactor.configure(file_type, template_path, module_name)

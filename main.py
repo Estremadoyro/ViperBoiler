@@ -4,6 +4,7 @@ import shutil
 
 # Local files
 from content_factory import ContentFactory
+import configuration_header
 
 # Terminal arguments
 PROJECT_NAME = sys.argv[1]
@@ -108,6 +109,9 @@ def create_file(name: str):
 def write_file(file_name: str, file_type: str, file):
     content = ""
 
+    # Write header manually.
+    template_path = get_template_path_for_file("header")
+    content += configuration_header.configure(file_type, template_path, MODULE_NAME, PROJECT_NAME)
     template_path = get_template_path_for_file(file_type)
 
     # Add content (header & body) by file_type
