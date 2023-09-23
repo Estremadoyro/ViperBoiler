@@ -1,20 +1,27 @@
-final class %s {
+//
+//  SearchModule.swift
+//  AnimeCalendar
+//
+//  Created by leonardo on 10/09/23 using ViperBoiler
+//
+
+final class SearchModule {
     // MARK: - Public State
     
     // MARK: - Private State
-    private let presenter: %sPresentable
+    private let presenter: SearchPresentable
     
     // MARK: - UI
     
     // MARK: - Initializers
     init() {
-        let router = %sRouter()
-        let interactor = %sInteractor()
-        presenter = %sPresenter(interactor: interactor, router: router)
+        let router = SearchRouter()
+        let interactor = SearchInteractor()
+        presenter = SearchPresenter(interactor: interactor, router: router)
     }
    
     // MARK: - API
-    func startScreenOnly() -> %sScreen {
+    func startScreenOnly() -> SearchScreen {
         let controller = presenter.start()
         presenter.view = controller
         
@@ -31,4 +38,4 @@ final class %s {
 }
 
 // MARK: - Detail
-private extension %s {}
+private extension SearchModule {}

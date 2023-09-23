@@ -1,6 +1,6 @@
 import UIKit
 
-final class %s: UIViewController {
+final class %s: UIViewController, Screen {
     // MARK: - Public State
     // MARK: - Private State
     private let presenter: %sPresentable

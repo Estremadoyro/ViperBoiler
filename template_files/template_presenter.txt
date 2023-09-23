@@ -1,9 +1,7 @@
-import class UIKit.UINavigationController
-
 protocol %sPresentable: AnyObject {
     var view: %sScreen? { get set }
     func start() -> %sScreen
-    func getBaseNavigation() -> UINavigationController?
+    func getBaseNavigation() -> CustomNavigationController?
 }
 
 final class %s {
@@ -29,7 +27,7 @@ extension %s: %sPresentable {
         return router.start(presenter: self)
     }
     
-    func getBaseNavigation() -> UINavigationController? {
-        return view?.navigationController
+    func getBaseNavigation() -> CustomNavigationController? {
+        return view?.navigationController as? CustomNavigationController
     }
 }

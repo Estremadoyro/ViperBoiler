@@ -1,9 +1,16 @@
+//
+//  SearchScreen.swift
+//  AnimeCalendar
+//
+//  Created by leonardo on 10/09/23 using ViperBoiler
+//
+
 import UIKit
 
-final class CastScreen: UIViewController {
+final class SearchScreen: UIViewController, Screen {
     // MARK: - Public State
     // MARK: - Private State
-    private let presenter: CastPresentable
+    private let presenter: SearchPresentable
     
     // MARK: - UI
     private lazy var sampleLabel: UILabel = {
@@ -19,7 +26,7 @@ final class CastScreen: UIViewController {
     }()
     
     // MARK: - Initializers
-    init(presenter: CastPresentable) {
+    init(presenter: SearchPresentable) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
@@ -33,7 +40,7 @@ final class CastScreen: UIViewController {
 }
 
 // MARK: - LifeCycle
-extension CastScreen {
+extension SearchScreen {
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutUI()
@@ -41,7 +48,7 @@ extension CastScreen {
 }
 
 // MARK: - Layout
-private extension CastScreen {
+private extension SearchScreen {
     func layoutUI() {
         view.backgroundColor = .black
         layoutLabel()
